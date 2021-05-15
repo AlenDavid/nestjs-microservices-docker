@@ -6,7 +6,7 @@ import { BooksModule } from './books.module';
 const logger = new Logger('Books');
 
 async function bootstrap() {
-  const port = 4000
+  const port = process.env.PORT || 4000
   const app = await NestFactory.createMicroservice(BooksModule, {
     transport: Transport.TCP,
     options: {

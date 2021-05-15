@@ -19,6 +19,6 @@ export class AppService {
   }
 
   public getHello(): Promise<string> {
-    return this.client.send<string, string>('getHello', 'Michael').toPromise();
+    return this.client.send<string, string>('booksGetAll', 'Michael').toPromise();
   }
 }

@@ -6,8 +6,8 @@ import { BooksService } from './books.service';
 export class BooksController {
   constructor(private readonly booksService: BooksService) {}
   
-  @MessagePattern('getHello')
-  getHello(name: string): string {
-    return this.booksService.getHello(name);
+  @MessagePattern('booksGetAll')
+  getBooks(): Book[] {
+    return this.booksService.getAll();
   }
 }
