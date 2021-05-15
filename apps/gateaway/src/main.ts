@@ -8,6 +8,6 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const port = process.env.PORT || 3000
   
-  app.listen(port, () => logger.log(`Microservice is listening at ${port}`));
+  app.listen(port, () => logger.log(`Gateaway is listening at ${port}`));
 }
 bootstrap();

@@ -13,13 +13,13 @@ export class AppService {
     this.client = ClientProxyFactory.create({
       transport: Transport.TCP,
       options: {
-        host: '0.0.0.0',
+        host: 'books',
         port: 4000,
       },
     });
   }
 
-  public getHello(): Promise<string> {
-    return this.client.send<string, string>('booksGetAll', 'Michael').toPromise();
+  public getHello(): Promise<any[]> {
+    return this.client.send<any[], string>('booksGetAll', 'Michael').toPromise();
   }
 }
