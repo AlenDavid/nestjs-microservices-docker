@@ -1,4 +1,30 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/gateaway/src",
+  "projects": {
+    "gateaway": {
+      "type": "application",
+      "root": "apps/gateaway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateaway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateaway/tsconfig.app.json"
+      }
+    },
+    "books": {
+      "type": "application",
+      "root": "apps/books",
+      "entryFile": "main",
+      "sourceRoot": "apps/books/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/books/tsconfig.app.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/gateaway/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/gateaway"
 }
