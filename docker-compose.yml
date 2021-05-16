@@ -10,6 +10,15 @@ services:
         ports:
             - "4000:4000"
             - "5000:5000"
+    users:
+        build: .
+        environment: 
+            APP: users
+            PORT: "4000"
+        container_name: users
+        ports:
+            - "4001:4000"
+            - "5001:5000"
     gateaway:
         build: .
         container_name: gateaway

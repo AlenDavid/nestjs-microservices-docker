@@ -5,11 +5,6 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  async getters() {
-    return this.appService.getHello();
-  }
-
   @Get('/books')
   async getBooks() {
     return this.appService.getBooks();
@@ -17,6 +12,11 @@ export class AppController {
 
   @Get('/users')
   async getUsers() {
+    return this.appService.getUsers();
+  }
+
+  @Get('/')
+  async getters() {
     return this.appService.getHello();
   }
 }
