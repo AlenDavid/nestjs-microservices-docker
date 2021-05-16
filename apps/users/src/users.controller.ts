@@ -8,7 +8,7 @@ export class UsersController {
   
   @MessagePattern('usersGetAll')
   @Get()
-  getHello(): User[] {
+  getHello(who: string): User[] {
     return this.usersService.getAllUsers();
   }
 }

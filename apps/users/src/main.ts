@@ -3,7 +3,7 @@ import { Logger } from '@nestjs/common';
 import { Transport } from '@nestjs/microservices';
 import { UsersModule } from './users.module';
 
-const logger = new Logger('Books');
+const logger = new Logger('Users');
 
 
 async function bootstrap() {

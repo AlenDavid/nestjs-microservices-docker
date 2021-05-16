@@ -38,6 +38,6 @@ export class AppService {
 
 
   public getUsers(): Promise<any[]> {
-    return this.books.send<any[], string>('usersGetAll', 'Michael').toPromise();
+    return this.users.send<any[], string>('usersGetAll', 'Michael').toPromise();
   }
 }
