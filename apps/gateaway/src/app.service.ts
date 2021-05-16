@@ -7,19 +7,37 @@ import {
 
 @Injectable()
 export class AppService {
-  private client: ClientProxy;
+  private books: ClientProxy;
+  private users: ClientProxy;
 
   constructor() {
-    this.client = ClientProxyFactory.create({
+    this.books = ClientProxyFactory.create({
       transport: Transport.TCP,
       options: {
         host: 'books',
         port: 4000,
       },
     });
+
+    this.users = ClientProxyFactory.create({
+      transport: Transport.TCP,
+      options: {
+        host: 'users',
+        port: 4000,
+      },
+    });
   }
 
-  public getHello(): Promise<any[]> {
-    return this.client.send<any[], string>('booksGetAll', 'Michael').toPromise();
+  public getHello() {
+    return 'Hello, World!'
+  }
+
+  public getBooks(): Promise<any[]> {
+    return this.books.send<any[], string>('booksGetAll', 'Michael').toPromise();
+  }
+
+
+  public getUsers(): Promise<any[]> {
+    return this.books.send<any[], string>('usersGetAll', 'Michael').toPromise();
   }
 }
