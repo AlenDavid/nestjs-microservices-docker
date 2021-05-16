@@ -7,7 +7,7 @@ const logger = new Logger('Users');
 
 
 async function bootstrap() {
-  let port = Number(process.env.PORT || 4000)
+  let port = Number(process.env.PORT || 3000)
   
   const microservice = await NestFactory.createMicroservice(UsersModule, {
     transport: Transport.TCP,
@@ -18,8 +18,5 @@ async function bootstrap() {
   });
   
   microservice.listen(() => logger.log(`Microservice is listening at ${port}`));
-
-  const app = await NestFactory.create(UsersModule);
-  app.listen(port + 1000, () => logger.log(`App is listening at ${port + 1000}`))
 }
 bootstrap();

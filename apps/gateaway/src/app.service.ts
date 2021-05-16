@@ -15,7 +15,7 @@ export class AppService {
       transport: Transport.TCP,
       options: {
         host: 'books',
-        port: 4000,
+        port: 3000,
       },
     });
 
@@ -23,13 +23,15 @@ export class AppService {
       transport: Transport.TCP,
       options: {
         host: 'users',
-        port: 4000,
+        port: 3000,
       },
     });
   }
 
   public getHello() {
-    return 'Hello, World!'
+    return {
+      message: 'Hello, World!'
+    }
   }
 
   public getBooks(): Promise<any[]> {

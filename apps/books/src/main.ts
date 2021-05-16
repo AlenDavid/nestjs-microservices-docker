@@ -6,7 +6,7 @@ import { BooksModule } from './books.module';
 const logger = new Logger('Books');
 
 async function bootstrap() {
-  let port = Number(process.env.PORT || 4000)
+  let port = Number(process.env.PORT || 3000)
   
   const microservice = await NestFactory.createMicroservice(BooksModule, {
     transport: Transport.TCP,
@@ -17,8 +17,5 @@ async function bootstrap() {
   });
   
   microservice.listen(() => logger.log(`Microservice is listening at ${port}`));
-
-  const app = await NestFactory.create(BooksModule);
-  app.listen(port + 1000, () => logger.log(`App is listening at ${port + 1000}`))
 }
 bootstrap();
