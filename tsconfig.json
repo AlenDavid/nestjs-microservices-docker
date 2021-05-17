@@ -10,14 +10,6 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true,
-    "paths": {
-      "users/users": [
-        "libs/users/src"
-      ],
-      "users/users/*": [
-        "libs/users/src/*"
-      ]
-    }
+    "incremental": true
   }
 }
